@@ -22,7 +22,11 @@ public:
     // as you can't get me read this okay ?
     // step 1: initialize: git init
     // step 2: git add . (all the files that will be commited)
-    // step 3: 
+    // step 3: git commit -am "Abida's classes codes"
+    // step 4: we have to push(an error message will come for the first time): git push origin master
+    // we need to track the url then push again: git remote add origin https://github.com/palindr
+//omicprime/Project-management.git
+       //step 5: We have a new master which is our url so we push again: git push origin master
 
 
 
