@@ -37,3 +37,21 @@ std::string Book::peekNextId() {
     ss << "B" << std::setfill('0') << std::setw(3) << nextIdNumber;
     return ss.str();
 }
+
+std::string Book::serialize() const {
+    // Format: ID|Title|Author|isAvailable
+    return id + "|" + title + "|" + author + "|" + (isAvailable ? "1" : "0");
+}
+
+Book Book::deserialize(const std::string& data) {
+    std::stringstream ss(data);
+    std::string id, title, author, avail;
+    std::getline(ss, id, '|');
+    std::getline(ss, title, '|');
+    std::getline(ss, author, '|');
+    std::getline(ss, avail, '|');
+
+    Book b(id, title, author);
+    b.setAvailability(avail == "1");
+    return b;
+}
